@@ -1,0 +1,53 @@
+format = """
+$time\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$aws\
+$kubernetes\
+$python\
+$line_break\
+$character"""
+
+
+[aws]
+format = '[$symbol($profile)]($style) '
+symbol = '☁️'
+style = 'red'
+
+[directory]
+truncation_length = 2
+style = "blue"
+
+[time]
+format = '[\[$time\] ]($style)'
+time_format = '%H:%M %z'
+disabled = false
+style = 'yellow'
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vicmd_symbol = "[❮](green)"
+
+[git_branch]
+format = "[$symbol$branch]($style)"
+symbol = '🌱'
+style = "dimmed"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead_behind)]($style) "
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[python]
+format = "[$virtualenv]($style)"
+style = "bright-black"
+
+[kubernetes]
+format = '[⛵$context\($namespace\)](purple)'
+disabled = false
