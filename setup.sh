@@ -2,6 +2,15 @@
 
 start_dir=$PWD
 
+if [[ -n "$ZPREZTODIR" ]]; then
+  echo "=> Setting up prezto zsh shell"
+  git clone --recursive https://github.com/joshniec/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  setopt EXTENDED_GLOB
+  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^z*; do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile}"
+  done
+fi
+
 dotfiles=(
   asdfrc
   chromaterm.yml
@@ -16,7 +25,7 @@ dotfiles=(
 
 echo "=> Setting up symlinks to $HOME"
 for dotfile in "${dotfiles[@]}"; do
-  ln -s "$PWD/$dotfile" "$HOME/.$dotfile"
+  ln -s "$PWD/${dotfile}" "$HOME/.${dotfile}"
 done
 
 echo "=> Setting up vim config"
