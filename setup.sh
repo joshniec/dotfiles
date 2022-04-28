@@ -40,6 +40,5 @@ echo "=> Setting up extra vim plugins"
 git clone https://github.com/fatih/vim-go ~/.vim_runtime/my_plugins/vim-go
 git clone https://github.com/hashivim/vim-terraform ~/.vim_runtime/my_plugins/vim-terraform
 git clone https://github.com/cespare/vim-toml ~/.vim_runtime/my_plugins/vim-toml
-git clone https://github.com/vimwiki/vimwiki ~/.vim_runtime/my_plugins/vimwiki
 
 echo "=> All done"

@@ -1,13 +1,8 @@
 " quick search for files in directories
 let g:ctrlp_map = '<C-p>'
 
-" vimwiki
-" set path to store wiki
-let g:vimwiki_list = [{'path': '~/.vimwiki/', 'ext': '.md','auto_toc': 1, 'template_path': '~/.vimwiki/templates/'}]
-
 " auto-pairs plugin
-" disabled because annoying
-let g:AutoPairsLoaded = 0
+let g:AutoPairsLoaded = 1
 
 " autocmd for filetypes
 " python
